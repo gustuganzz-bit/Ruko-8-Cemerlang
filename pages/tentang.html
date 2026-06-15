@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami – Ruko 8 Cemerlang</title>
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dcfy7xqli/image/upload/v1781399967/ChatGPT_Image_Jun_11_2026_12_58_29_AM_ln58en.png">
+  <meta name="description"
+    content="Profil perusahaan Ruko 8 Cemerlang: mitra legalitas usaha dan pertanahan terpercaya di Indonesia dengan lebih dari 8 tahun pengalaman.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ─── ABOUT PAGE STYLES ─── */
+    .about-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-story-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: visible;
+    }
+
+    .about-img-card {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--navy) 0%, #0d2a60 60%, rgba(212, 175, 55, 0.2) 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-img-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .about-img-icon {
+      width: 100px;
+      height: 100px;
+      background: rgba(212, 175, 55, 0.15);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-img-icon svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--gold);
+    }
+
+    .about-badge-float {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--gray-200);
+    }
+
+    .about-badge-float .num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .about-badge-float .label {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+    }
+
+    .about-badge-float svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+    }
+
+    .about-badge-float2 {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .about-badge-float2 svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
+    .about-badge-float2 span {
+      font-size: 0.82rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .visi-misi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .vm-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1.5px solid var(--gray-200);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vm-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+
+    .vm-icon {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .vm-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--gold);
+    }
+
+    .vm-card h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .misi-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .misi-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+
+    .misi-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .legality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .legality-card {
+      padding: 36px 28px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .legality-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .legality-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .legality-card:hover::before {
+      transform: scaleX(1);
+    }
+
+
+    .legality-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .legality-card svg {
+      width: 26px;
+      height: 26px;
+      fill: var(--gold);
+    }
+
+    .legality-card h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .legality-card p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+      .about-story {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .visi-misi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-badge-float {
+        right: 0;
+        bottom: -40px;
+      }
+
+      .about-badge-float2 {
+        left: 0;
+        top: -40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar injected -->
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span class="sep">›</span>
+        <span>Tentang Kami</span>
+      </div>
+      <span class="section-label">Tentang Kami</span>
+      <h1>Mitra Legalitas Terpercaya<br>Sejak 2023</h1>
+      <p>Mengenal lebih dekat Ruko 8 Cemerlang — tim profesional yang berdedikasi untuk kepastian hukum Anda.</p>
+    </div>
+  </div>
+
+  <!-- ════ STORY / PROFILE ════ -->
+  <section>
+    <div class="container">
+      <div class="about-story">
+        <div class="about-story-visual fade-in">
+          <div class="about-img-card">
+            <div class="about-img-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+              </svg>
+            </div>
+          </div>
+          <div class="about-badge-float2">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+            <span>Terdaftar & Berlisensi</span>
+          </div>
+          <div class="about-badge-float">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+            </svg>
+            <div>
+              <div class="num">2.500+</div>
+              <div class="label">Klien<br>Terlayani</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <span class="section-label">Profil Perusahaan</span>
+          <h2 class="section-title">Ruko 8 Cemerlang</h2>
+          <div class="gold-line gold-line-left"></div>
+          <p style="margin-bottom:16px">
+            <strong>Ruko 8 Cemerlang</strong> merupakan perusahaan jasa legalitas usaha dan pertanahan yang membantu
+            individu maupun perusahaan dalam pengurusan dokumen hukum secara cepat, aman, dan terpercaya.
+          </p>
+          <p style="margin-bottom:16px">
+            Berdiri sejak tahun 2023, kami telah melayani lebih dari 2.500 klien — mulai dari individu, ahli waris,
+            investor, startup, UMKM, hingga perusahaan berskala nasional. Dengan tim konsultan hukum yang berpengalaman
+            dan proses yang terstandarisasi, kami memastikan setiap dokumen yang kami urus memiliki kekuatan hukum yang
+            kuat dan sah.
+          </p>
+          <p>
+            Kepercayaan klien adalah aset terbesar kami. Oleh karena itu, kami selalu mengutamakan transparansi biaya,
+            kepastian waktu, dan komunikasi yang terbuka di setiap tahap pekerjaan.
+          </p>
+          <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+            <a href="layanan.html" class="btn btn-primary">Lihat Layanan Kami</a>
+            <a href="kontak.html" class="btn btn-outline-navy">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ VISI MISI ════ -->
+  <section style="background:var(--gray-50)">
+    <div class="container">
+      <div class="text-center fade-in">
+        <span class="section-label">Nilai Perusahaan</span>
+        <h2 class="section-title">Visi & Misi Kami</h2>
+        <div class="gold-line"></div>
+        <p class="section-subtitle">Setiap langkah yang kami ambil dipandu oleh komitmen terhadap kepastian hukum dan
+          kepuasan klien.</p>
+      </div>
+
+      <div class="visi-misi-grid">
+        <div class="vm-card fade-in">
+          <div class="vm-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+          <h3>Visi</h3>
+          <p>Menjadi mitra legalitas usaha dan pertanahan terpercaya nomor satu di Indonesia, yang dikenal atas
+            integritas, profesionalisme, dan kepuasan klien.</p>
+        </div>
+
+        <div class="vm-card fade-in">
+          <div class="vm-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
+            </svg>
+          </div>
+          <h3>Misi</h3>
+          <ul class="misi-list">
+            <li>Memberikan layanan hukum yang profesional dan berorientasi pada hasil</li>
+            <li>Memastikan setiap proses berlangsung cepat, efisien, dan tepat waktu</li>
+            <li>Menjaga transparansi biaya dan komunikasi yang terbuka dengan klien</li>
+            <li>Mengutamakan kepastian hukum dan keabsahan dokumen yang diproses</li>
+            <li>Terus berinovasi dalam memberikan solusi yang mudah diakses semua kalangan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ LEGALITAS PERUSAHAAN ════ -->
+  <section>
+    <div class="container">
+      <div class="text-center fade-in">
+        <span class="section-label">Legalitas Kami</span>
+        <h2 class="section-title">Terdaftar, Berlisensi & Diakui</h2>
+        <div class="gold-line"></div>
+        <p class="section-subtitle">Kami beroperasi sepenuhnya dalam kerangka hukum yang berlaku di Indonesia,
+          memberikan jaminan keamanan dan keabsahan untuk setiap layanan.</p>
+      </div>
+
+      <div class="legality-grid">
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.96.5 13.5.5c-1.5 0-2.81.75-3.6 1.88-.79-1.13-2.1-1.88-3.6-1.88C3.96.5 1.92 2.54 1.92 4.66c0 .46.11.9.18 1.34H0v2h20V6z" />
+              <path d="M2 8v14h20V8H2zm10 11-5-5 1.41-1.41L12 16.17l7.59-7.59L21 10l-9 9z" />
+            </svg>
+          </div>
+          <h3>Badan Hukum Resmi</h3>
+          <p>Terdaftar sebagai badan usaha resmi di Kemenkumham RI</p>
+        </div>
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+            </svg>
+          </div>
+          <h3>Izin Usaha Aktif</h3>
+          <p>Memiliki NIB dan izin usaha yang valid dan selalu diperbarui</p>
+        </div>
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+          </div>
+          <h3>Rekanan Notaris & PPAT</h3>
+          <p>Bekerja sama dengan notaris dan PPAT berlisensi resmi</p>
+        </div>
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+            </svg>
+          </div>
+          <h3>Mitra ATR/BPN</h3>
+          <p>Proses pertanahan terkoordinasi langsung dengan ATR/BPN</p>
+        </div>
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </div>
+          <h3>Akses OSS Resmi</h3>
+          <p>Terdaftar di sistem OSS untuk pengurusan perizinan berusaha</p>
+        </div>
+        <div class="legality-card fade-in">
+          <div class="legality-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+            </svg>
+          </div>
+          <h3>Tim Konsultan Hukum</h3>
+          <p>Didukung konsultan hukum berpengalaman di bidangnya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Fix nav links for sub-pages
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          const href = a.getAttribute('href');
+          if (href && !href.startsWith('http') && !href.startsWith('../') && !href.startsWith('pages/')) {
+            if (href.startsWith('pages/')) return;
+            // already correct
+          }
+        });
+        // Fix footer links
+        document.querySelectorAll('.footer-links a').forEach(a => {
+          const href = a.getAttribute('href');
+          if (href && href.startsWith('../')) return; // already fixed
+        });
+      }, 100);
+    });
+  </script>
+</body>
+
+</html>

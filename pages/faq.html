@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ – Pertanyaan yang Sering Diajukan | Ruko 8 Cemerlang</title>
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dcfy7xqli/image/upload/v1781399967/ChatGPT_Image_Jun_11_2026_12_58_29_AM_ln58en.png">
+  <meta name="description"
+    content="Temukan jawaban atas pertanyaan umum seputar layanan legalitas usaha dan pertanahan Ruko 8 Cemerlang.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .faq-nav {
+      position: sticky;
+      top: 100px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-nav-header {
+      background: var(--navy);
+      padding: 16px 20px;
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .faq-nav-list {
+      list-style: none;
+    }
+
+    .faq-nav-list li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      font-size: 0.84rem;
+      color: var(--gray-700);
+      border-bottom: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+
+    .faq-nav-list li a:hover,
+    .faq-nav-list li a.active {
+      color: var(--navy);
+      background: rgba(7, 26, 70, 0.04);
+      padding-left: 24px;
+    }
+
+    .faq-nav-list li a svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .faq-count {
+      margin-left: auto;
+      background: var(--gray-100);
+      color: var(--gray-500);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+
+    .faq-section {
+      margin-bottom: 48px;
+    }
+
+    .faq-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--gray-100);
+    }
+
+    .faq-section-title-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .faq-section-title-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+    }
+
+    .faq-section-title h3 {
+      color: var(--navy);
+      font-size: 1.1rem;
+    }
+
+    .faq-search-box {
+      display: flex;
+      gap: 0;
+      margin-bottom: 48px;
+      max-width: 560px;
+    }
+
+    .faq-search-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 2px solid var(--gray-200);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      color: var(--gray-900);
+      transition: var(--transition);
+    }
+
+    .faq-search-input:focus {
+      border-color: var(--gold);
+    }
+
+    .faq-search-btn {
+      padding: 14px 20px;
+      background: var(--navy);
+      border: 2px solid var(--navy);
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .faq-search-btn:hover {
+      background: var(--navy-light);
+    }
+
+    .faq-search-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .accordion-header h4 {
+      font-size: 0.92rem;
+    }
+
+    .accordion-body {
+      padding-top: 16px;
+    }
+
+    @media (max-width: 1024px) {
+      .faq-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-nav {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span class="sep">›</span>
+        <span>FAQ</span>
+      </div>
+      <span class="section-label">FAQ</span>
+      <h1>Pertanyaan yang Sering<br>Diajukan Klien Kami</h1>
+      <p>Temukan jawaban atas pertanyaan umum seputar layanan legalitas usaha dan pertanahan kami.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+
+      <!-- Search -->
+      <div class="faq-search-box fade-in">
+        <input type="text" class="faq-search-input" id="faqSearch"
+          placeholder="Cari pertanyaan, misal: biaya PT, waktu proses...">
+        <button class="faq-search-btn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          </svg>
+          Cari
+        </button>
+      </div>
+
+      <div class="faq-layout">
+        <!-- NAV -->
+        <nav class="faq-nav fade-in">
+          <div class="faq-nav-header">Topik Pertanyaan</div>
+          <ul class="faq-nav-list">
+            <li>
+              <a href="#umum">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                </svg>
+                Pertanyaan Umum
+                <span class="faq-count">5</span>
+              </a>
+            </li>
+            <li>
+              <a href="#legalitas">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                </svg>
+                Legalitas Usaha
+                <span class="faq-count">7</span>
+              </a>
+            </li>
+            <li>
+              <a href="#pertanahan-faq">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                </svg>
+                Pertanahan
+                <span class="faq-count">7</span>
+              </a>
+            </li>
+            <li>
+              <a href="#proses">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                </svg>
+                Proses & Dokumen
+                <span class="faq-count">5</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- FAQ CONTENT -->
+        <div id="faq-content">
+
+          <!-- UMUM -->
+          <div class="faq-section" id="umum">
+            <div class="faq-section-title fade-in">
+              <div class="faq-section-title-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                </svg>
+              </div>
+              <h3>Pertanyaan Umum</h3>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah bisa melakukan konsultasi secara online?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Ya, kami melayani komunikasi dan diskusi awal melalui WhatsApp, telepon,
+                maupun email. Setelah kebutuhan Anda dipahami, tim kami akan menjelaskan proses, dokumen yang
+                diperlukan, dan estimasi biaya secara detail. Untuk pengurusan dokumen, beberapa tahap mungkin
+                memerlukan kehadiran fisik atau pengiriman dokumen asli.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah ada jaminan jika proses memakan waktu lebih lama dari estimasi?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Estimasi waktu yang kami berikan berdasarkan kondisi normal. Keterlambatan
+                bisa terjadi karena faktor eksternal seperti antrean di instansi pemerintah, kelengkapan dokumen, atau
+                kondisi khusus lainnya. Kami selalu mengomunikasikan perkembangan secara proaktif dan memberikan update
+                berkala kepada klien.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Bagaimana cara mengetahui biaya layanan yang saya butuhkan?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Hubungi kami melalui form di website, WhatsApp, atau telepon dengan
+                menjelaskan kebutuhan Anda. Tim kami akan memberikan informasi biaya yang transparan dan terperinci
+                setelah memahami kebutuhan spesifik Anda. Biaya kami bersifat tetap dan tidak ada biaya tersembunyi.
+              </div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah dokumen yang diurus terjamin keabsahannya secara hukum?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Ya. Semua dokumen yang kami proses diurus langsung melalui instansi resmi
+                pemerintah (Kemenkumham, BPN/ATR, OSS, Notaris/PPAT berlisensi). Kami tidak menggunakan jalur tidak
+                resmi. Setiap dokumen yang diserahkan kepada klien memiliki kekuatan hukum penuh sesuai regulasi yang
+                berlaku.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Jam berapa tim Ruko 8 Cemerlang bisa dihubungi?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Tim kami tersedia pada hari Senin hingga Jumat pukul 08.00–17.00 WIB, dan
+                Sabtu pukul 09.00–13.00 WIB. Di luar jam kerja, Anda tetap bisa mengirim pesan via WhatsApp dan akan
+                kami respons pada hari kerja berikutnya.</div>
+            </div>
+          </div>
+
+          <!-- LEGALITAS USAHA -->
+          <div class="faq-section" id="legalitas">
+            <div class="faq-section-title fade-in">
+              <div class="faq-section-title-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                </svg>
+              </div>
+              <h3>Legalitas Usaha</h3>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Berapa estimasi waktu untuk mendirikan PT?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Proses pendirian PT umumnya memakan waktu 10–21 hari kerja sejak semua dokumen
+                lengkap diserahkan. Untuk PT Perorangan bisa lebih cepat, sekitar 7–14 hari kerja. Waktu ini mencakup
+                pembuatan akta notaris, pengesahan di Kemenkumham, dan pengurusan NIB.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa saja dokumen yang diperlukan untuk mendirikan PT?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">
+                Dokumen dasar yang diperlukan umumnya meliputi: KTP dan NPWP seluruh pemegang saham dan pengurus; data
+                nama perusahaan (minimal 3 pilihan); bidang usaha (KBLI); domisili perusahaan (alamat dan NPWP/SKT
+                lokasi); modal dasar dan modal ditempatkan; komposisi saham. Kami akan memberikan checklist dokumen
+                lengkap setelah konfirmasi kebutuhan Anda.
+              </div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa perbedaan PT Perorangan dan PT Umum?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">PT Perorangan dapat didirikan oleh satu orang saja, diperuntukkan bagi pelaku
+                UMKM dengan modal di bawah Rp 5 miliar, dan prosesnya lebih sederhana tanpa akta notaris. PT Umum
+                membutuhkan minimal 2 pemegang saham, tidak ada batasan modal maksimum, wajib menggunakan akta notaris,
+                dan cocok untuk bisnis yang lebih besar atau membutuhkan investasi.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah CV bisa diubah menjadi PT setelah berdiri?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Secara teknis, CV tidak bisa langsung dikonversi ke PT. Prosesnya adalah
+                mendirikan PT baru dan memindahkan kegiatan usaha dari CV ke PT tersebut. CV lama kemudian dapat
+                dibubarkan atau dibiarkan tidak aktif. Tim kami dapat membantu merencanakan proses transisi ini secara
+                legal dan efisien.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah NIB bisa diurus setelah PT berdiri?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Ya, NIB bisa diurus setelah PT berdiri dan mendapat pengesahan dari
+                Kemenkumham. Bahkan saat ini, pengurusan NIB melalui sistem OSS sudah terintegrasi dalam satu alur,
+                sehingga bisa diajukan bersamaan dengan atau segera setelah pendirian badan usaha. Proses NIB biasanya
+                selesai dalam 1–3 hari kerja.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa yang dimaksud dengan perubahan akta dan kapan diperlukan?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Perubahan akta diperlukan saat terjadi perubahan dalam struktur atau
+                operasional perusahaan, seperti: pergantian nama perusahaan, perubahan alamat, penggantian
+                direksi/komisaris, penambahan atau pengurangan modal, pengalihan saham, penambahan bidang usaha, atau
+                perubahan anggaran dasar lainnya. Setiap perubahan ini harus disahkan melalui notaris dan dilaporkan ke
+                Kemenkumham.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Berapa lama proses penutupan perusahaan (PT atau CV)?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Proses penutupan PT meliputi RUPS pembubaran, pengangkatan likuidator,
+                penyelesaian kewajiban kepada pihak ketiga, pengumuman, dan pencabutan status badan hukum dari
+                Kemenkumham. Keseluruhan proses dapat memakan waktu 3–6 bulan tergantung kompleksitas aset dan kewajiban
+                perusahaan.</div>
+            </div>
+          </div>
+
+          <!-- PERTANAHAN -->
+          <div class="faq-section" id="pertanahan-faq">
+            <div class="faq-section-title fade-in">
+              <div class="faq-section-title-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                </svg>
+              </div>
+              <h3>Pertanahan</h3>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Berapa lama proses pemecahan sertifikat tanah?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Proses pemecahan sertifikat tanah biasanya memakan waktu 30–60 hari kerja
+                sejak berkas diterima lengkap di kantor BPN. Waktu ini mencakup pengukuran lapangan oleh petugas BPN,
+                proses administrasi, dan penerbitan sertifikat baru. Waktu aktual bisa bervariasi tergantung antrean di
+                kantor BPN setempat.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa saja dokumen yang diperlukan untuk balik nama sertifikat?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Dokumen yang umumnya diperlukan: sertifikat tanah asli, AJB (Akta Jual Beli)
+                dari PPAT, KTP dan KK pembeli dan penjual, NPWP pembeli dan penjual, bukti pelunasan BPHTB, bukti
+                pelunasan PPh, bukti PBB 5 tahun terakhir, dan IMB (jika ada bangunan). Tim kami akan memberikan
+                checklist lengkap dan spesifik sesuai lokasi tanah.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa itu Roya dan kapan saya memerlukannya?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Roya adalah proses penghapusan catatan Hak Tanggungan (HT) dari sertifikat
+                tanah. Anda membutuhkan roya setelah melunasi kredit pemilikan tanah/bangunan dari bank. Jika tidak
+                diroya, catatan HT akan tetap muncul di sertifikat dan dapat menyulitkan saat akan menjual atau
+                menjaminkan properti kembali. Proses roya di BPN biasanya memakan waktu 14–30 hari kerja.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah tanah girik bisa langsung dijual?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Secara hukum, tanah girik tidak memiliki sertifikat resmi dan tidak bisa
+                diperjualbelikan melalui AJB di PPAT. Transaksi tanah girik hanya bisa dilakukan dengan akta di bawah
+                tangan yang rawan sengketa. Sangat disarankan untuk mengkonversi girik ke SHM terlebih dahulu sebelum
+                melakukan transaksi jual beli agar terlindungi secara hukum.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Bagaimana jika sertifikat tanah hilang atau rusak?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Sertifikat tanah yang hilang atau rusak dapat diajukan penggantian ke BPN
+                melalui proses penerbitan sertifikat pengganti. Prosesnya meliputi: pengajuan permohonan, pembuatan
+                surat pernyataan dan laporan kehilangan, pengumuman di surat kabar, pemeriksaan data yuridis di kantor
+                BPN, dan penerbitan sertifikat baru. Kami dapat mendampingi seluruh proses ini.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apa perbedaan SHM dan HGB? Mana yang lebih baik?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">SHM (Sertifikat Hak Milik) adalah bukti kepemilikan tanah yang paling kuat dan
+                tidak terbatas waktu — hanya bisa dimiliki WNI. HGB (Hak Guna Bangunan) adalah hak mendirikan bangunan
+                di atas tanah yang bukan milik sendiri dengan jangka waktu tertentu (biasanya 30 tahun, dapat
+                diperpanjang), dan bisa dimiliki badan hukum Indonesia. Untuk kepemilikan pribadi WNI, SHM jelas lebih
+                baik karena permanen dan memiliki nilai lebih tinggi.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Berapa lama proses turun waris sertifikat tanah?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Proses turun waris (peralihan hak karena pewarisan) umumnya memakan waktu
+                60–120 hari kerja, tergantung kompleksitas kasus — jumlah ahli waris, ada tidaknya sengketa, dan
+                kelengkapan dokumen waris. Dokumen yang dibutuhkan antara lain akta kematian, surat keterangan ahli
+                waris yang disahkan lurah dan camat, KTP seluruh ahli waris, dan dokumen tanah asli.</div>
+            </div>
+          </div>
+
+          <!-- PROSES & DOKUMEN -->
+          <div class="faq-section" id="proses">
+            <div class="faq-section-title fade-in">
+              <div class="faq-section-title-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                </svg>
+              </div>
+              <h3>Proses & Dokumen</h3>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Bagaimana cara memulai proses dengan Ruko 8 Cemerlang?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Prosesnya sangat mudah: (1) Hubungi kami via WhatsApp, form website, atau
+                telepon; (2) Ceritakan kebutuhan Anda secara singkat; (3) Tim kami akan mendiskusikan detail layanan,
+                dokumen yang diperlukan, estimasi waktu dan biaya; (4) Setelah sepakat, Anda menyerahkan dokumen dan
+                kami mulai memproses; (5) Kami berikan update berkala hingga dokumen selesai dan diserahkan kepada Anda.
+              </div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah dokumen saya aman di tangan Ruko 8 Cemerlang?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Keamanan dokumen klien adalah prioritas kami. Setiap dokumen yang diterima
+                dicatat, disimpan dengan aman, dan hanya diakses oleh petugas yang berwenang. Setelah proses selesai,
+                seluruh dokumen asli dikembalikan kepada klien beserta laporan penyelesaian pekerjaan. Kami juga
+                menandatangani perjanjian kerahasiaan jika diperlukan klien.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah saya bisa memantau progres proses yang sedang berjalan?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Ya. Kami secara proaktif memberikan update status pekerjaan kepada klien
+                melalui WhatsApp atau media komunikasi yang disepakati. Anda juga dapat menghubungi tim kami kapan saja
+                selama jam kerja untuk menanyakan perkembangan. Transparansi dan komunikasi terbuka adalah komitmen
+                kami.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Bagaimana sistem pembayaran layanan Ruko 8 Cemerlang?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Kami menerapkan sistem pembayaran yang transparan dan fleksibel. Biaya layanan
+                diinformasikan di awal sebelum pekerjaan dimulai. Kami biasanya menerapkan uang muka di awal dan
+                pelunasan saat dokumen selesai. Metode pembayaran meliputi transfer bank dan beberapa metode digital.
+                Detail akan diinformasikan saat diskusi awal.</div>
+            </div>
+
+            <div class="accordion-item fade-in">
+              <div class="accordion-header">
+                <h4>Apakah dokumen yang diurus sudah termasuk biaya pemerintah (PNBP)?</h4>
+                <div class="accordion-icon"><svg viewBox="0 0 24 24">
+                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                  </svg></div>
+              </div>
+              <div class="accordion-body">Hal ini bervariasi tergantung paket layanan yang disepakati. Beberapa layanan
+                sudah termasuk biaya PNBP (Penerimaan Negara Bukan Pajak), sementara yang lain dikenakan terpisah. Kami
+                selalu merinci setiap komponen biaya — termasuk biaya pemerintah — secara jelas di awal sehingga tidak
+                ada kejutan di kemudian hari.</div>
+            </div>
+          </div>
+
+          <script>
+            // FAQ Search
+            document.getElementById('faqSearch').addEventListener('input', function () {
+              const query = this.value.toLowerCase().trim();
+              document.querySelectorAll('.accordion-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = (!query || text.includes(query)) ? '' : 'none';
+              });
+              // Show/hide section titles
+              document.querySelectorAll('.faq-section').forEach(sec => {
+                const visible = [...sec.querySelectorAll('.accordion-item')].some(i => i.style.display !== 'none');
+                sec.style.display = visible ? '' : 'none';
+              });
+            });
+          </script>
+
+          <script src="../js/components.js"></script>
+          <script src="../js/main.js"></script>
+</body>
+
+</html>

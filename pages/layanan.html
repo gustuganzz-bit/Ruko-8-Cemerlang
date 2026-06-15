@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan – Ruko 8 Cemerlang | Legalitas Usaha & Pertanahan</title>
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/dcfy7xqli/image/upload/v1781399967/ChatGPT_Image_Jun_11_2026_12_58_29_AM_ln58en.png">
+  <meta name="description"
+    content="Layanan lengkap Ruko 8 Cemerlang: Pendirian PT, CV, NIB, OSS RBA, Balik Nama, SHM, HGB, Turun Waris, Roya, AJB, dan lebih banyak lagi.">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .services-tabs-wrap {
+      background: var(--white);
+    }
+
+    .tab-list {
+      gap: 0;
+      border-bottom: 2px solid var(--gray-200);
+      margin-bottom: 0;
+    }
+
+    .tab-btn {
+      padding: 18px 32px;
+      font-size: 0.95rem;
+      border-radius: 0;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      gap: 8px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tab-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tab-btn.active svg {
+      fill: var(--navy);
+    }
+
+    .tab-btn:not(.active) svg {
+      fill: var(--gray-500);
+    }
+
+    .services-content {
+      padding: 60px 0;
+    }
+
+    .service-section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1.5px solid var(--gray-200);
+    }
+
+    .service-section-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .service-section-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--gold);
+    }
+
+    .services-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item-card {
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .service-item-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+
+    .service-item-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-item-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gray-100);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .service-item-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(7, 26, 70, 0.06);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      transition: var(--transition);
+    }
+
+    .service-item-card:hover .service-item-icon {
+      background: var(--navy);
+    }
+
+    .service-item-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--navy);
+      transition: var(--transition);
+    }
+
+    .service-item-card:hover .service-item-icon svg {
+      fill: var(--gold);
+    }
+
+    .service-item-card h3 {
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .service-item-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--gray-700);
+      margin-bottom: 16px;
+    }
+
+    .service-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .service-item-meta svg {
+      width: 13px;
+      height: 13px;
+      fill: var(--gold);
+    }
+
+    .cta-sidebar {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      position: sticky;
+      top: 100px;
+    }
+
+    .cta-sidebar h3 {
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-sidebar p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sidebar-contact-item:last-of-type {
+      border-bottom: none;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-contact-item svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .sidebar-contact-item span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .services-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .tab-btn {
+        padding: 14px 18px;
+        font-size: 0.85rem;
+      }
+
+      .services-list-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-section-header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <span class="sep">›</span>
+        <span>Layanan</span>
+      </div>
+      <span class="section-label">Layanan Kami</span>
+      <h1>Solusi Lengkap untuk<br>Setiap Kebutuhan Legal Anda</h1>
+      <p>Dari pendirian perusahaan hingga pengurusan sertifikat tanah — semua kami tangani dengan profesional dan
+        transparan.</p>
+    </div>
+  </div>
+
+  <!-- ════ SERVICES TABS ════ -->
+  <section class="services-tabs-wrap" id="layanan-tabs">
+    <div class="container">
+      <ul class="tab-list" role="tablist">
+        <li>
+          <button class="tab-btn active" data-tab="legalitas" role="tab">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 6h-2.18c.07-.44.18-.88.18-1.34C18 2.54 15.96.5 13.5.5c-1.5 0-2.81.75-3.6 1.88-.79-1.13-2.1-1.88-3.6-1.88C3.96.5 1.92 2.54 1.92 4.66c0 .46.11.9.18 1.34H0v2h20V6z" />
+              <path d="M2 8v14h20V8H2zm10 11-5-5 1.41-1.41L12 16.17l7.59-7.59L21 10l-9 9z" />
+            </svg>
+            Legalitas Usaha
+          </button>
+        </li>
+        <li>
+          <button class="tab-btn" data-tab="pertanahan" role="tab">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Pertanahan
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="services-content">
+    <div class="container">
+      <div class="services-layout">
+
+        <!-- MAIN CONTENT -->
+        <div>
+
+          <!-- ── TAB: LEGALITAS USAHA ── -->
+          <div id="legalitas" class="tab-panel active">
+            <div class="service-section-header">
+              <div class="service-section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                </svg>
+              </div>
+              <div>
+                <h2 style="font-family:var(--font-display);color:var(--navy);font-size:1.6rem;margin-bottom:8px">
+                  Legalitas Usaha</h2>
+                <p style="color:var(--gray-700);font-size:0.9rem;max-width:540px">Kami menangani seluruh kebutuhan hukum
+                  pendirian, perubahan, perizinan, hingga penutupan badan usaha Anda. Semua proses dilakukan secara
+                  profesional sesuai regulasi yang berlaku.</p>
+              </div>
+            </div>
+
+            <div class="services-list-grid">
+              <!-- 1 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                  </svg>
+                </div>
+                <h3>PT Perorangan</h3>
+                <p>Pendirian Perseroan Terbatas (PT) yang dapat didirikan oleh satu orang sesuai UU Cipta Kerja. Solusi
+                  ideal untuk wirausaha dan UMKM yang ingin memiliki badan hukum resmi.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 7–14 hari kerja
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z" />
+                  </svg>
+                </div>
+                <h3>PT Umum</h3>
+                <p>Pendirian Perseroan Terbatas dengan dua pemegang saham atau lebih. Pilihan terbaik untuk bisnis skala
+                  menengah hingga besar yang membutuhkan struktur hukum yang kuat.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 10–21 hari kerja
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                  </svg>
+                </div>
+                <h3>CV (Commanditaire Vennootschap)</h3>
+                <p>Pendirian CV — badan usaha yang terdiri dari sekutu aktif dan pasif. Cocok untuk usaha kecil dan
+                  menengah yang membutuhkan fleksibilitas dalam pengelolaan.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 5–10 hari kerja
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z" />
+                  </svg>
+                </div>
+                <h3>Yayasan</h3>
+                <p>Pendirian yayasan untuk keperluan sosial, keagamaan, atau kemanusiaan. Kami membantu proses
+                  pendaftaran resmi di Kemenkumham hingga mendapatkan status badan hukum.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 14–21 hari kerja
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                  </svg>
+                </div>
+                <h3>Firma</h3>
+                <p>Pendirian Firma — persekutuan antara dua pihak atau lebih yang menjalankan usaha di bawah satu nama
+                  bersama. Ideal untuk profesi hukum, akuntansi, dan konsultansi.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 7–14 hari kerja
+                </div>
+              </div>
+
+              <!-- 6 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                  </svg>
+                </div>
+                <h3>NIB (Nomor Induk Berusaha)</h3>
+                <p>Pengurusan NIB melalui sistem OSS — identitas tunggal bagi pelaku usaha yang wajib dimiliki untuk
+                  menjalankan kegiatan bisnis di Indonesia secara legal.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 1–3 hari kerja
+                </div>
+              </div>
+
+              <!-- 7 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+                  </svg>
+                </div>
+                <h3>OSS RBA (Perizinan Berusaha)</h3>
+                <p>Pengurusan perizinan usaha berbasis risiko (Low, Medium, High Risk) melalui sistem OSS yang
+                  terintegrasi dengan instansi pemerintah terkait.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 3–14 hari kerja
+                </div>
+              </div>
+
+              <!-- 8 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                  </svg>
+                </div>
+                <h3>Perubahan Akta / Direksi / Saham</h3>
+                <p>Pengurusan perubahan akta perusahaan, pergantian susunan direksi/komisaris, penambahan atau
+                  pengalihan saham, serta perubahan anggaran dasar lainnya.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 14–30 hari kerja
+                </div>
+              </div>
+
+              <!-- 9 -->
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
+                  </svg>
+                </div>
+                <h3>Penutupan / Pembubaran Perusahaan</h3>
+                <p>Proses pembubaran dan likuidasi badan usaha secara resmi dan legal, termasuk penyelesaian kewajiban,
+                  pencabutan izin, dan penghapusan dari daftar perusahaan.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 30–90 hari kerja
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── TAB: PERTANAHAN ── -->
+          <div id="pertanahan" class="tab-panel">
+            <div class="service-section-header">
+              <div class="service-section-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                </svg>
+              </div>
+              <div>
+                <h2 style="font-family:var(--font-display);color:var(--navy);font-size:1.6rem;margin-bottom:8px">
+                  Pertanahan</h2>
+                <p style="color:var(--gray-700);font-size:0.9rem;max-width:540px">Layanan pengurusan sertifikat tanah
+                  dan hak atas tanah yang komprehensif. Kami bekerja sama dengan Notaris/PPAT dan ATR/BPN untuk
+                  memastikan keabsahan setiap dokumen pertanahan Anda.</p>
+              </div>
+            </div>
+
+            <div class="services-list-grid">
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                  </svg>
+                </div>
+                <h3>Balik Nama Sertifikat</h3>
+                <p>Proses pengalihan kepemilikan sertifikat tanah dari nama penjual ke nama pembeli setelah transaksi
+                  jual beli melalui AJB di PPAT. Kami urus dari A sampai Z.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 30–90 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M22 16V4c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2zm-11-4l2.03 2.71L16 11l4 5H8l3-4zM2 6v14c0 1.1.9 2 2 2h14v-2H4V6H2z" />
+                  </svg>
+                </div>
+                <h3>Pemecahan Sertifikat</h3>
+                <p>Pemecahan satu sertifikat induk menjadi beberapa sertifikat baru dengan batas dan luas yang lebih
+                  kecil. Diperlukan untuk pengembangan kavling atau warisan.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 30–60 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z" />
+                  </svg>
+                </div>
+                <h3>Penggabungan Sertifikat</h3>
+                <p>Penggabungan dua atau lebih sertifikat tanah yang bersebelahan menjadi satu sertifikat baru.
+                  Mempermudah pengelolaan dan meningkatkan nilai properti Anda.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 30–60 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+                  </svg>
+                </div>
+                <h3>Turun Waris</h3>
+                <p>Pengurusan peralihan hak atas tanah dari pewaris kepada ahli waris yang sah berdasarkan hukum. Kami
+                  bantu prosesnya mulai dari penetapan ahli waris hingga penerbitan sertifikat baru.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 60–120 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm5 11H7v-2h10v2z" />
+                  </svg>
+                </div>
+                <h3>Roya (Hapus Hak Tanggungan)</h3>
+                <p>Penghapusan beban Hak Tanggungan (HT) pada sertifikat tanah setelah pelunasan kredit atau hutang
+                  kepada kreditur. Proses roya di BPN untuk mengosongkan catatan HT.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 14–30 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                  </svg>
+                </div>
+                <h3>AJB (Akta Jual Beli)</h3>
+                <p>Pembuatan Akta Jual Beli tanah di hadapan PPAT sebagai syarat sah peralihan hak atas tanah. Kami
+                  koordinasikan seluruh proses termasuk pengecekan sertifikat dan pajak.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 7–14 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                </div>
+                <h3>Pengurusan SHM</h3>
+                <p>Pengurusan Sertifikat Hak Milik — bukti kepemilikan tanah terkuat menurut hukum Indonesia. Kami bantu
+                  proses pengajuan, pengukuran, hingga terbitnya SHM.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 90–180 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                  </svg>
+                </div>
+                <h3>Pengurusan HGB</h3>
+                <p>Pengurusan Hak Guna Bangunan — hak mendirikan bangunan di atas tanah yang bukan milik sendiri dalam
+                  jangka waktu tertentu. Ideal untuk properti komersial dan developer.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 60–120 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                  </svg>
+                </div>
+                <h3>Pengecekan Sertifikat</h3>
+                <p>Verifikasi keaslian dan status sertifikat tanah di kantor BPN untuk memastikan sertifikat bebas
+                  sengketa, tidak dalam jaminan, dan valid sebelum transaksi.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 3–7 hari kerja
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                  </svg>
+                </div>
+                <h3>Penanganan Tanah Hilang / Sengketa</h3>
+                <p>Bantuan hukum untuk kasus sertifikat tanah yang hilang, rusak, atau dalam sengketa. Kami
+                  koordinasikan proses penerbitan sertifikat pengganti dan mediasi sengketa.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: Menyesuaikan kasus
+                </div>
+              </div>
+
+              <div class="service-item-card fade-in">
+                <div class="service-item-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+                <h3>Konversi Girik ke SHM</h3>
+                <p>Proses pengakuan dan konversi hak tanah girik (Letter C / Petok D) menjadi Sertifikat Hak Milik yang
+                  diakui secara resmi oleh hukum. Amankan tanah warisan Anda.</p>
+                <div class="service-item-meta">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                  </svg>
+                  Estimasi: 180+ hari kerja
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside>
+          <div class="cta-sidebar fade-in">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--gold)" style="margin-bottom:16px">
+              <path
+                d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+            </svg>
+            <h3>Butuh Informasi Lebih Lanjut?</h3>
+            <p>Hubungi tim kami untuk mendapatkan informasi lengkap mengenai layanan dan estimasi biaya yang sesuai
+              kebutuhan Anda.</p>
+
+            <a href="kontak.html#form" class="btn btn-primary"
+              style="width:100%;justify-content:center;margin-bottom:12px">
+              Kirim Pesan Sekarang
+            </a>
+            <a href="https://wa.me/6281234567890" class="btn btn-secondary"
+              style="width:100%;justify-content:center;border-color:rgba(255,255,255,0.3)" target="_blank">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              Chat WhatsApp
+            </a>
+
+            <div style="margin-top:24px;border-top:1px solid rgba(255,255,255,0.1);padding-top:20px">
+              <div class="sidebar-contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                </svg>
+                <span>+62 812-3456-7890</span>
+              </div>
+              <div class="sidebar-contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span>info@ruko8cemerlang.com</span>
+              </div>
+              <div class="sidebar-contact-item">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 15H11v-6h1.5v6zm0-8H11V7h1.5v2z" />
+                </svg>
+                <span>Senin – Jumat: 08.00 – 17.00<br>Sabtu: 09.00 – 13.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini FAQ -->
+          <div
+            style="margin-top:20px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:var(--radius);padding:24px">
+            <h4 style="color:var(--navy);font-size:0.9rem;margin-bottom:16px">Pertanyaan Umum</h4>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <a href="faq.html"
+                style="font-size:0.82rem;color:var(--gray-700);display:flex;align-items:flex-start;gap:8px;transition:var(--transition)">
+                <span style="color:var(--gold);flex-shrink:0;margin-top:1px">→</span>
+                Berapa biaya membuat PT?
+              </a>
+              <a href="faq.html"
+                style="font-size:0.82rem;color:var(--gray-700);display:flex;align-items:flex-start;gap:8px;transition:var(--transition)">
+                <span style="color:var(--gold);flex-shrink:0;margin-top:1px">→</span>
+                Dokumen apa saja yang dibutuhkan?
+              </a>
+              <a href="faq.html"
+                style="font-size:0.82rem;color:var(--gray-700);display:flex;align-items:flex-start;gap:8px;transition:var(--transition)">
+                <span style="color:var(--gold);flex-shrink:0;margin-top:1px">→</span>
+                Apakah bisa diurus dari luar kota?
+              </a>
+              <a href="faq.html" class="btn btn-sm btn-outline-navy" style="justify-content:center;margin-top:8px">Lihat
+                Semua FAQ</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- Handle anchor link to show tab -->
+  <script>
+    if (window.location.hash === '#pertanahan') {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="pertanahan"]').classList.add('active');
+      document.getElementById('pertanahan').classList.add('active');
+    }
+    if (window.location.hash === '#legalitas') {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="legalitas"]').classList.add('active');
+      document.getElementById('legalitas').classList.add('active');
+    }
+  </script>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
